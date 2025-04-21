@@ -1,54 +1,80 @@
-# React + TypeScript + Vite
+# 🧪 Prueba Técnica Frontend React - Neology
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una solución a la prueba técnica para la vacante de **Frontend Developer en React** en Neology. Está construido con **React + TypeScript**, utilizando **Material UI** para el diseño de la interfaz, consumo de datos desde una API REST pública, ruteo dinámico, búsqueda filtrada y pruebas unitarias básicas con **Vitest** y **React Testing Library**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Descripción del Proyecto
 
-## Expanding the ESLint configuration
+La aplicación muestra una lista de usuarios obtenidos desde la API de [JSONPlaceholder](https://jsonplaceholder.typicode.com/users). Permite:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Visualizar la lista de usuarios.
+- Buscar usuarios por nombre (filtrado en frontend).
+- Ver el detalle completo de un usuario al hacer clic en él.
+- Navegar entre páginas con paginación.
+- Visualización responsive.
+- Validación básica del campo de búsqueda para evitar ataques de scripting.
+- Pruebas unitarias fundamentales.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## ⚙️ Tecnologías utilizadas
+
+- React 18 + TypeScript
+- Vite
+- React Router DOM
+- Material UI (MUI)
+- Axios
+- Sass (no se utilizó, pero está habilitado)
+- Vitest + React Testing Library + jsdom
+
+---
+
+## 📦 Instalación del Proyecto
+
+1. Clona el repositorio:
+
+```bash
+git clone git@github.com:strcoder/prueba-tecnica-aguayo.git
+cd prueba-tecnica-aguayo
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Instala dependencias:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+## Inicia el servidor local:
+
+
+```bash
+npm run dev
+La aplicación estará disponible en http://localhost:3000
+```
+
+### 🧠 Estrategias y buenas prácticas aplicadas
+- Componentización: Separación clara entre lógica de negocio (servicios) y presentación (componentes/páginas).
+- Consumo de API: Mediante Axios encapsulado en un archivo de servicio (/api/users.ts).
+- Ruteo dinámico: Con React Router, usando :id para detalle de usuario.
+- Material UI: Uso de componentes accesibles, responsive y modernos.
+- Paginación: Implementada para mejorar la experiencia de usuario con grandes volúmenes de datos.
+- Prevención de ataques XSS: Sanitización de la entrada del usuario en el input de búsqueda.
+- Pruebas unitarias: Implementadas en los componentes clave, cubriendo renderizado, filtrado y lógica de negocio.
+
+## 🧪 Cómo correr las pruebas
+Ejecuta el siguiente comando:
+
+```bash
+npm run test
+```
+
+### Si deseas ejecutar en modo interactivo para desarrollo:
+
+```bash
+npx vitest
+```
+
+## 📌 Nota final
+Esta prueba fue desarrollada bajo los lineamientos solicitados, buscando aplicar buenas prácticas, un enfoque claro en la experiencia de usuario y manteniendo la calidad del código.
+Gracias por la oportunidad de participar en su proceso.
